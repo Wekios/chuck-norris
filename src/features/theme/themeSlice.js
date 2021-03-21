@@ -1,7 +1,5 @@
 import { getFromStorage, setIntoStorage } from "utils/storage";
 
-// Small file, didn't want to break it out into multiple files
-
 export const SET_THEME = "SET_THEME";
 export const THEME_KEY = "theme";
 

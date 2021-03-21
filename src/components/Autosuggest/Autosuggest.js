@@ -17,8 +17,8 @@ export function Autosuggest({ id, onSearch, onSelect, label, request, minLength 
 
   let content;
 
-  if (isLoading) content = <p>Loading...</p>;
-  else if (error) content = <p>{error}</p>;
+  if (isLoading) content = <p className={styles.infoText}>Loading...</p>;
+  else if (error) content = <p className={styles.infoText}>{error}</p>;
   else if (value.length >= minLength)
     content = <AutosuggestList id={`listbox-${id}`} onSelect={onSelect} options={data} />;
 

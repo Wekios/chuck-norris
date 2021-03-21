@@ -4,6 +4,12 @@
   margin-right: auto;
 }
 
+.infoText {
+  margin: auto;
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
 /* this should/could be extracted into screen-reader utility class  */
 .label {
   position: absolute;

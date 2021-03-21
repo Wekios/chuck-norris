@@ -1,6 +1,6 @@
 import { Switch } from "components/Switch/Switch";
 import { useDispatch, useSelector } from "react-redux";
-import { setThemeMode } from "store/theme";
+import { setThemeMode } from "./themeSlice";
 
 export const boolToTheme = {
   true: "dark",

@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootSaga from "./saga";
-import { themeReducer } from "./theme";
+import { themeReducer } from "features/Theme";
 import { factReducer } from "features/SingleFact";
 import { searchReducer } from "features/FactSearch";
 import { factBoardReducer } from "features/FactBoard";

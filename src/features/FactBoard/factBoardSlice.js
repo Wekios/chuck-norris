@@ -33,7 +33,6 @@ export const GET_RANDOM_FACT_URL = "https://api.chucknorris.io/jokes/random";
 function* handleRandomRequest() {
   try {
     const result = yield call(axios, GET_RANDOM_FACT_URL);
-    console.log(result.data);
     yield put(factBoardActions.getRandomFactSuccess(result.data));
   } catch (err) {
     yield put(factBoardActions.getRandomFactFailure(err.response.data.message || "something went wrong"));

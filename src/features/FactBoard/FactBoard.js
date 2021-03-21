@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { RandomFact } from "./RandomFact";
 import { Card } from "components/Card/Card";
+import { Container } from "components/Layout/Container";
 
 export function FactBoard() {
   const { previousSearches: list } = useSelector((state) => state.factBoard);
@@ -12,9 +13,9 @@ export function FactBoard() {
     <RandomFact />
   );
   return (
-    <ul>
+    <Container as="ul" width="narrow">
       <h2>List of achievements: </h2>
       {content}
-    </ul>
+    </Container>
   );
 }

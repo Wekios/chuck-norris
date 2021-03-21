@@ -6,9 +6,7 @@ export function LandingPage() {
   return (
     <>
       <FactSearch />
-      <Container width="narrow">
-        <FactBoard />
-      </Container>
+      <FactBoard />
     </>
   );
 }
