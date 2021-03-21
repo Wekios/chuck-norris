@@ -11,7 +11,7 @@ function* handleInput({ query }) {
     const data = result.data.result.slice(0, 6);
     yield put(searchActions.searchSuccess(data));
   } catch (err) {
-    yield put(searchActions.searchError(err));
+    yield put(searchActions.searchFailure(err.response.data.message || "something went wrong"));
   }
 }
 

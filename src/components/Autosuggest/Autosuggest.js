@@ -1,7 +1,17 @@
+import { useState } from "react";
 import styles from "./Autosuggest.module.css";
 
-export function Autosuggest({ id, onChange, onSelect, label, request }) {
+export function Autosuggest({ id, onSearch, onSelect, label, request, minLength = 0 }) {
   const { isLoading, data, error } = request;
+  const [value, setValue] = useState("");
+
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setValue(value);
+    if (value.length >= minLength) {
+      onSearch(value);
+    }
+  };
 
   const containsData = data.length > 0 && !isLoading;
 
@@ -9,7 +19,8 @@ export function Autosuggest({ id, onChange, onSelect, label, request }) {
 
   if (isLoading) content = <p>Loading...</p>;
   else if (error) content = <p>{error}</p>;
-  else content = <AutosuggestList id={`listbox-${id}`} onSelect={onSelect} options={data} />;
+  else if (value.length >= minLength)
+    content = <AutosuggestList id={`listbox-${id}`} onSelect={onSelect} options={data} />;
 
   return (
     <div className={styles.autosuggest}>
@@ -20,9 +31,10 @@ export function Autosuggest({ id, onChange, onSelect, label, request }) {
         <input
           id={id}
           className={styles.input}
-          onChange={onChange}
+          onChange={handleOnChange}
           type="search"
           placeholder="Try typing more than 2 characters"
+          minLength={minLength}
         />
         {content}
       </div>

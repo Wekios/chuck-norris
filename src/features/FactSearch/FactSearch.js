@@ -8,9 +8,8 @@ export function FactSearch() {
   const search = useSelector((state) => state.search);
   const history = useHistory();
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    if (value.length >= 3) dispatch(searchActions.search(value));
+  const handleSearch = (value) => {
+    dispatch(searchActions.search(value));
   };
 
   const handleSelect = (e) => {
@@ -23,8 +22,9 @@ export function FactSearch() {
       request={search}
       id="chuck"
       label="search for a quote"
-      onChange={handleChange}
+      onSearch={handleSearch}
       onSelect={handleSelect}
+      minLength={3}
     />
   );
 }
