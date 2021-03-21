@@ -11,7 +11,6 @@ function App() {
         <Route path="/details/:id" component={DetailsPage} />
         <Route path="/" component={LandingPage} exact />
       </main>
-      {/* <Footer /> */}
     </Router>
   );
 }
