@@ -1,18 +1,12 @@
-import { Autosuggest } from "features/Autosuggest/Autosuggest";
-import { API_CHUCK_POINT, chuckSearchData } from "services/chuck-quote";
-import { Container } from "../../components/Layout/Container";
 import styles from "./index.module.css";
+import { Container } from "../../components/Layout/Container";
+import { FactSearch } from "features/FactSearch/FactSearch";
 
 export function LandingPage() {
   return (
     <>
       <Container className={styles.chuck} width="narrow">
-        <Autosuggest
-          id="chucked"
-          endpoint={API_CHUCK_POINT}
-          transformSearchData={chuckSearchData}
-          label="search for a quote"
-        />
+        <FactSearch />
       </Container>
       <section>Previous searches or random fact</section>
     </>
