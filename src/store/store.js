@@ -4,12 +4,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import rootSaga from "./saga";
 import { themeReducer } from "./theme";
 import { factReducer } from "features/SingleFact";
-import { searchReducer } from "./search/search-reducer";
+import { searchReducer } from "features/FactSearch";
+import { factBoardReducer } from "features/FactBoard";
 
 const reducer = combineReducers({
   theme: themeReducer,
   search: searchReducer,
   fact: factReducer,
+  factBoard: factBoardReducer,
 });
 
 export const sagaMiddleware = createSagaMiddleware();

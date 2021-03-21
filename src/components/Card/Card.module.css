@@ -1,0 +1,15 @@
+.card {
+  padding: 1rem;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--font-color);
+}
+
+.card:not(:last-child) {
+  border-bottom: none;
+}
+
+.image {
+  margin-right: 1rem;
+}

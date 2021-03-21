@@ -1,20 +1,4 @@
-.quote {
-  position: relative;
-  margin: 1.5rem 1rem;
-  padding: 0.5rem;
-  text-align: justify;
-  background: var(--bg-color);
-  border-left: 10px solid #ccc;
-}
-
-.quote:before {
-  top: 0;
-  font-size: 40px;
-  position: absolute;
-  content: open-quote;
-  color: var(--font-color);
-}
-
-.text {
-  padding-left: 1.5rem;
+.info {
+  text-align: center;
+  padding: 1.5rem;
 }

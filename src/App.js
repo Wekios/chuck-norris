@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main className="py-3">
+      <main>
         <Route path="/details/:id" component={DetailsPage} />
         <Route path="/" component={LandingPage} exact />
       </main>

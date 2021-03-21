@@ -1,14 +1,14 @@
-import styles from "./index.module.css";
-import { Container } from "../../components/Layout/Container";
-import { FactSearch } from "features/FactSearch/FactSearch";
+import { Container } from "components/Layout/Container";
+import { FactBoard } from "features/FactBoard";
+import { FactSearch } from "features/FactSearch";
 
 export function LandingPage() {
   return (
     <>
-      <Container className={styles.chuck} width="narrow">
-        <FactSearch />
+      <FactSearch />
+      <Container width="narrow">
+        <FactBoard />
       </Container>
-      <section>Previous searches or random fact</section>
     </>
   );
 }

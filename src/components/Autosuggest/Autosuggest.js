@@ -42,13 +42,13 @@ export function Autosuggest({ id, onSearch, onSelect, label, request, minLength 
   );
 }
 
-export function AutosuggestList({ id: rootId, onSelect, options }) {
+export function AutosuggestList({ id, onSelect, options }) {
   return (
-    <ul id={rootId} className={styles.list} role="listbox">
-      {options.map(({ id, value }) => (
-        <li key={id} className={styles.listItem}>
-          <button className={styles.listButton} onClick={onSelect} id={id}>
-            <span className={styles.listText}>{value}</span>
+    <ul id={id} className={styles.list} role="listbox">
+      {options.map((option) => (
+        <li key={option.id} className={styles.listItem}>
+          <button className={styles.listButton} onClick={() => onSelect(option)}>
+            <span className={styles.listText}>{option.value}</span>
           </button>
         </li>
       ))}

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "components/Layout/Container";
 import { factActions } from "./singleFactSlice";
+import { Card } from "components/Card/Card";
 
 export function SingleFact({ id }) {
   const dispatch = useDispatch();
@@ -15,14 +16,13 @@ export function SingleFact({ id }) {
 
   let content;
 
-  if (isLoading) content = <p>Loading...</p>;
-  else if (error) content = <p>{error}</p>;
-  else
-    content = (
-      <blockquote className={styles.quote}>
-        <span className={styles.text}>{data.value}</span>
-      </blockquote>
-    );
+  if (isLoading) content = <p className={styles.info}>Loading...</p>;
+  else if (error) content = <p className={styles.info}>{error}</p>;
+  else content = <Card image={{ imageUrl: data.icon_url, imageAlt: "chuck" }} text={data.value} />;
 
-  return <Container width="narrow">{content}</Container>;
+  return (
+    <Container className={styles.container} width="narrow">
+      {content}
+    </Container>
+  );
 }
