@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+UML diagram was in plan for this project but unfortunately I never used UML for React Apps and the time limit was around 2h so... 😬
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
